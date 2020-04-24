@@ -8,6 +8,7 @@ import ExtendingStyles from './components/WithStyledComponents/ExtendingStyles';
 import PseudoElements from './components/WithStyledComponents/PseudoElements';
 import Animations from './components/WithStyledComponents/Animations';
 import Theming from './components/WithStyledComponents/Theming';
+import OverridingTheme from './components/WithStyledComponents/OverridingTheme';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,6 +27,8 @@ ReactDOM.render(
     <Animations />
 
     <Theming />
+
+    <OverridingTheme />
   </React.StrictMode>,
   document.getElementById('root')
 );
