@@ -12,19 +12,19 @@ import Theming from './components/WithStyledComponents/Theming';
 ReactDOM.render(
   <React.StrictMode>
     <NoStyledComponents />
-    <hr />
+
     <WithStyledComponents />
-    <hr />
+
     <BasedOnProps />
-    <hr />
+
     <BasedOnProps2 />
-    <hr />
+
     <ExtendingStyles />
-    <hr />
+
     <PseudoElements />
-    <hr />
+
     <Animations />
-    <hr />
+
     <Theming />
   </React.StrictMode>,
   document.getElementById('root')
