@@ -1,0 +1,10 @@
+h1 {
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+}
+
+section {
+  padding: 4em;
+  background: rgb(164, 110, 25);
+}

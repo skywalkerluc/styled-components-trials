@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Styled-components
 
-## Available Scripts
+(https://medium.com/building-crowdriff/styled-components-to-use-or-not-to-use-a6bb4a7ffc21)
 
-In the project directory, you can run:
+## É o resultado do brainstorm de como poderíamos melhorar o CSS pra estilizar componentes do React.
 
-### `yarn start`
+Algumas características:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- styled-components mantém registro de quais componentes estão renderizados na page e injeta seus estilos e apenas isso, totalmente automatico. Combinado com o code splitting (bundling), seu usuário acaba rodando o mínimo de código necessário.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- styled-components gera nomes de classes únicos para seus estilos. Você nunca precisará se preocupar com duplicação, sobescrita ou escrita errada das classes.
 
-### `yarn test`
+- Pode ser complicado de saber quando um nome de classe está sendo usado em mais de um lugar no seu código. Styled-components faz isso parecer óbvio, já que a estilização é anexada à um componente específico.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Adaptar a estilização de um componente baseado em suas propriedades ou num tema global é simples e intuitivo (não é necessária a modificação manual de dezenas de classes).
 
-### `yarn build`
+- Manutenção não é dolorosa, pois você nunca precisará "caçar" entre diversos arquivos para descobrir o que está afetando seu componente. Isso independende do quão grande e complexo é sua aplicação.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instalando:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- npm install --save styled-components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Comparando com e sem styled-components
 
-### `yarn eject`
+## Pseudoelements, pseudoselectors e nesting
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+O preprocessador que usamos, stylis, suporta sintaxe do scss para estilização em cadeia.
+Enquanto isso, o símbolo (&) pode ser usado para referenciar novamente o componente principal (como se fosse a palavra-chave 'this').
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Theming
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Styled-components tem suporte completo para estilização por temas, exportando o <ThemeProvider>. Esse componente nos entrega um tema para todos os componentes dentro dessa mesma tag através da ContextAPI (Ler mais). Na árvore de renderização, todos os componentes tocados pelo styled-components têm acesso ao tema, mesmo estando múltiplos níveis abaixo (por hierarquia).
